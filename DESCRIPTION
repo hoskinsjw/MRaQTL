@@ -9,7 +9,7 @@ Description: This package includes all functions required to apply the master re
     1. Tissue-specific gene co-expression network inference with ARACNe (not implemented in R)
     2. Expression regulators activity inferences and data preparation (implemented in this package)
     3. Phenotypic master regulator (MR) inference (implemented in this package)
-    4. expression and activity QTL (eQTL and aQTL) analyses (implemented in this package)
+    4. Expression and activity QTL (eQTL and aQTL) analyses (implemented in this package)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
