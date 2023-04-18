@@ -7,13 +7,18 @@
 invNormTrans(genes)
 }
 \arguments{
-\item{genes}{matrix or data.frame containing gene metrics with genes in rows and samples in columns. Gene and sample identifiers should be in rownames and colnames, respectively.}
+\item{genes}{matrix or data.frame containing gene metrics with genes in rows
+and samples in columns. Gene and sample identifiers should be in rownames
+and colnames, respectively.}
 }
 \value{
-Returns a data.frame in the same format as the input gene data, but with inverse normal transformed values.
+Returns a data.frame in the same format as the input gene data, but
+with inverse normal transformed values.
 }
 \description{
-This function applies an inverse normal transformation (INT) on the given gene metrics using the RankNorm() function from the RNOmni package, but is more rapid due to the use of multi-threading when possible.
+This function applies an inverse normal transformation (INT) on the given
+gene metrics using the RankNorm() function from the RNOmni package, but is
+more rapid due to the use of multi-threading when possible.
 }
 \examples{
 \dontrun{

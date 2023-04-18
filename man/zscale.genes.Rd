@@ -7,13 +7,17 @@
 zscale.genes(genes)
 }
 \arguments{
-\item{genes}{matrix or data.frame containing gene metrics with genes in rows and samples in columns. Gene and sample identifiers should be in rownames and colnames, respectively.}
+\item{genes}{matrix or data.frame containing gene metrics with genes in rows
+and samples in columns. Gene and sample identifiers should be in rownames
+and colnames, respectively.}
 }
 \value{
-Returns an expression set object (from DESeq2) with the gene metrics Z-scaled across samples.
+Returns an expression set object (from DESeq2) with the gene metrics
+Z-scaled across samples.
 }
 \description{
-This function applies Z-scaling for all genes across samples very rapidly using multi-threading when possible.
+This function applies Z-scaling for all genes across samples very rapidly
+using multi-threading when possible.
 }
 \examples{
 \dontrun{

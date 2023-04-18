@@ -16,31 +16,44 @@ write.regulon3(
 )
 }
 \arguments{
-\item{regulon}{A regulon object generated from the aracne2regulon() function in the VIPER package.}
+\item{regulon}{A regulon object generated from the aracne2regulon() function
+in the VIPER package.}
 
 \item{file}{string for the file name to which the regulon should be written.}
 
-\item{sep}{string for the character(s) or regular expression escaped character to be used as the field delimiter in the text file. Default is "\t", which is the tab-delimiter.}
+\item{sep}{string for the character(s) or regular expression escaped
+character to be used as the field delimiter in the text file. Default is tab,
+ which is the tab-delimiter.}
 
-\item{header}{logical indicating whether the header should be printed. Default is TRUE.}
+\item{header}{logical indicating whether the header should be printed.
+Default is TRUE.}
 
-\item{n}{numeric indicating the number of interactions to print. Default is Inf.}
+\item{n}{numeric indicating the number of interactions to print. Default is
+Inf.}
 
-\item{regulator}{string specifying a particular regulator. Default is NULL.}
+\item{regulator}{string specifying a particular regulator to which the
+output pairwise interactions will be restricted. Default is NULL.}
 
-\item{cpus}{numeric indicating the number of CPUs to use in parallel processing. Defaults to all detected available cores.}
+\item{cpus}{numeric indicating the number of CPUs to use in parallel
+processing. Defaults to all detected available cores.}
 
-\item{toScreen}{logical indicating whether the output should also be printed in the console. Defaults to FALSE.}
+\item{toScreen}{logical indicating whether the output should also be printed
+in the console. Defaults to FALSE.}
 }
 \value{
-Write the regulon object to the indicated file and returns a data.frame version of the regulon formatted as in the output file.
+Write the regulon object (aka interactome when all regulons are
+included) to the indicated file and returns a data.frame version of the
+regulon formatted as in the output file.
 }
 \description{
-Write regulon object to text file. This is a modification of the write.regulon() function included in the VIPER that is much faster due to multi-threading.
+Write a regulon object to text file. This is a modification of the
+write.regulon() function included in the aracne.networks package that is
+much faster due to multi-threading.
 }
 \examples{
 \dontrun{
-regulon<-aracne2regulon(tissue_net,genes_set,format="3col") # NOTE: The aracne network file cannot have a header!!!
+regulon<-aracne2regulon(tissue_net,genes_set,format="3col")
+# NOTE: The aracne network file cannot have a header!!!
 regTable<-write.regulon3(regulon,file="tissue_interactome.txt",sep=""))
 }
 }

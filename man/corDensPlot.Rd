@@ -14,14 +14,17 @@ corDensPlot(expression, activity, file_prefix)
 \item{file_prefix}{string for the file name prefix for the output png file}
 }
 \value{
-Writes the density plot for all regulators' matched activities and expression values Pearson correlations to a png image file.
+Writes the density plot for all regulators' matched activities and
+expression values Pearson correlations to a png image file.
 }
 \description{
-This function generates a png image file of a density plot of regulators' activity-to-expression Pearson correlations.
+This function generates a png image file of a density plot of regulators'
+activity-to-expression Pearson correlations.
 }
 \examples{
 \dontrun{
 corDensPlot(reg_expression,reg_activity,"Regulators")
-# Generates the file "Regulators_activity_expression_correlation.png" in your working directory.
+# Generates the file "Regulators_activity_expression_correlation.png" in
+# your working directory.
 }
 }
