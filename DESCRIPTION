@@ -17,11 +17,13 @@ biocViews:
 Imports: 
     aracne.networks,
     Biobase,
+    caret,
     doParallel,
     foreach,
     future,
     graphics,
     grDevices,
+    MatrixEQTL,
     MatrixGenerics,
     parallel,
     preprocessCore,
