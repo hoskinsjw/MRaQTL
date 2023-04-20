@@ -100,11 +100,11 @@ rfCrossVal <- function(act_file,pheno_file,phenotype,seed=123,train_pct=0.7,min_
   cl=parallel::makeCluster(future::availableCores())
   doParallel::registerDoParallel(cl)
   if(bin_pheno){ # If phenotype is binary...
-    cv_rndFor=foreach::foreach(i=1:replicates,) %dopar%
-      rfcv.wrapper(seed=i, train_x=t(train_zvip), train_y=as.factor(train_phenos))
+    cv_rndFor=foreach::foreach(i=1:replicates,.packages = 'MRaQTL') %dopar%
+      MRaQTL::rfcv.wrapper(seed=i, train_x=t(train_zvip), train_y=as.factor(train_phenos))
   } else{ # If phenotype is continuous...
-    cv_rndFor=foreach::foreach(i=1:replicates,) %dopar%
-      rfcv.wrapper(seed=i, train_x=t(train_zvip), train_y=train_phenos)
+    cv_rndFor=foreach::foreach(i=1:replicates,.packages = 'MRaQTL') %dopar%
+      MRaQTL::rfcv.wrapper(seed=i, train_x=t(train_zvip), train_y=train_phenos)
   }
   parallel::stopCluster(cl)
 

@@ -57,7 +57,7 @@ prepActExp <- function(gene_exp,covariables,network,prefix){
 
   # Scale (i.e. Z-transform) genes in the full log2(TPM) dataset.
   print("Z-scaling expression data")
-  z_set=zscale.genes(genes)
+  z_set=zscale.genes(genes,exprSet = T)
 
   # Convert the ARACNe network to interactome that includes mode of action (MoA) based on both the network and expression data
   print("Generating interactome from ARACNe network and expression data")
