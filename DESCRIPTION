@@ -36,3 +36,5 @@ Imports:
 RoxygenNote: 7.2.3
 Suggests: 
     roxygen2
+URL: https://github.com/hoskinsjw/MRaQTL
+BugReports: https://github.com/hoskinsjw/MRaQTL/issues
