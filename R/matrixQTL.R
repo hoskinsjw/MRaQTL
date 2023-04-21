@@ -12,14 +12,16 @@
 #' exression/activities file.
 #' @param gene_map string indicating the path and file name for the gene map
 #' file.
+#' @param prefix string indicating a prefix to be added to all output file
+#' names.
 #' @param covars string indicating the path and file name for the covariables
-#' file.
+#' file. If you do not wish to include covariables in the QTL analysis (not
+#' typically recommended), do not assign anything to this argument. Defaults to
+#' NULL.
 #' @param cisP numeric indicating the P-value threshold for cis-QTLs to be
 #' written to the output file.
 #' @param transP numeric indicating the P-value threshold for trans-QTLs to be
 #' written to the output file.
-#' @param prefix string indicating a prefix to be added to all output file
-#' names.
 #'
 #' @return Writes four output files:
 #' \enumerate{
@@ -42,7 +44,7 @@
 #' "GEUVADIS_filtered_samples_select_covars.txt",
 #' cisP=1,transP=0.05,"Toy_data")
 #' }
-matrixQTL <- function(snp_dose,snp_map,gene_data,gene_map,covars,cisP,transP,prefix){
+matrixQTL <- function(snp_dose,snp_map,gene_data,gene_map,prefix,covars,cisP,transP){
 
   # Send standard output to a log file.
   sink(paste(prefix,"_MatrixQTL_std_out.log",sep = ""),split = T)
@@ -161,11 +163,13 @@ matrixQTL <- function(snp_dose,snp_map,gene_data,gene_map,covars,cisP,transP,pre
   cat('Detected distant QTLs:', dim(trans_eqtls)[1],'\n');
 
   ## Plot the Q-Q plot of local and distant p-values
-  grDevices::pdf(paste(prefix,"_QQ_plot.jpg",sep = ""))
+  grDevices::pdf(paste(prefix,"_QQ_plot.pdf",sep = ""))
   plot(me)
   grDevices::dev.off()
 
   utils::write.table(cis_eqtls,paste(prefix,"_cis_results_",cisP,"_P_threshold.txt",sep = ""),sep="\t",quote = FALSE,row.names=FALSE)
   utils::write.table(trans_eqtls,paste(prefix,"_trans_results_",transP,"_P_threshold.txt",sep = ""),sep="\t",quote = FALSE,row.names=FALSE)
 
-  }
+  closeAllConnections()
+
+}

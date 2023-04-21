@@ -14,6 +14,8 @@
 #' data with the same sample in the same order as the regulator activities file.
 #' @param phenotype string indicating the column name for the phenotype of
 #' interest in the phenotype file.
+#' @param prefix string indicating a prefix to be added to all output file
+#' names.
 #' @param seed numeric indicating the RNG seed. Defaults to 123
 #' @param train_pct numeric indicating the proportion of samples to use in the
 #' training set, while the remaining samples will go to the test set. Defaults
@@ -35,8 +37,6 @@
 #' cross-validation analyses to run. Higher numbers will tend to generate
 #' cleaner plots (up to a point), but will also add to the analysis time.
 #' Defaults to 12.
-#' @param prefix string indicating a prefix to be added to all output file
-#' names.
 #'
 #' @return This will output a png image file of the random forest cross-
 #' validation plot and a .RData workspace image file that can be used in the
@@ -51,7 +51,7 @@
 #' "Sim_pheno",
 #' prefix="Toy_data")
 #' }
-rfCrossVal <- function(act_file,pheno_file,phenotype,seed=123,train_pct=0.7,min_regs=100,max_regs=500,Bonf_thresh=0.05,replicates=12,prefix){
+rfCrossVal <- function(act_file,pheno_file,phenotype,prefix,seed=123,train_pct=0.7,min_regs=100,max_regs=500,Bonf_thresh=0.05,replicates=12){
 
   # Send standard output to a log file.
   sink(paste(prefix,"_rfcv_std_out.log",sep = ""),type = "output",split = T)
@@ -117,5 +117,7 @@ rfCrossVal <- function(act_file,pheno_file,phenotype,seed=123,train_pct=0.7,min_
 
   # RFCV analysis finished
   print("Random forest cross-validation analysis is complete. Look at the plot of mean cross-validation error across feature counts to determine how many features are needed to minimize prediction error while keeping the feature count as low as possible. This feature count will be used in the following master regulator analysis to pick out that number of putative master regulators (MRs) for your phenotype of interest.")
+
+  closeAllConnections()
 
 }

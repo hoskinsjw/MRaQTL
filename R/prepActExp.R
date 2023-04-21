@@ -41,6 +41,7 @@
 #' "Toy_data")
 #' }
 prepActExp <- function(gene_exp,covariables,network,prefix){
+
   # Send standard output to a log file.
   sink(paste(prefix,"_VIPER_and_expression_normalization_std_out.log",sep = ""),type = "output",split = T)
 
@@ -105,4 +106,7 @@ prepActExp <- function(gene_exp,covariables,network,prefix){
   utils::write.table(cbind("Gene_name"=rownames(filt_vip),filt_vip),
               paste(prefix,"_regulators_activities.txt",sep=""),
               sep="\t",quote = F,row.names = F)
+
+  closeAllConnections()
+
 }

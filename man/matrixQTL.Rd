@@ -4,7 +4,7 @@
 \alias{matrixQTL}
 \title{matrixQTL}
 \usage{
-matrixQTL(snp_dose, snp_map, gene_data, gene_map, covars, cisP, transP, prefix)
+matrixQTL(snp_dose, snp_map, gene_data, gene_map, prefix, covars, cisP, transP)
 }
 \arguments{
 \item{snp_dose}{string indicating the path and file name for the SNP dosage
@@ -18,17 +18,19 @@ exression/activities file.}
 \item{gene_map}{string indicating the path and file name for the gene map
 file.}
 
+\item{prefix}{string indicating a prefix to be added to all output file
+names.}
+
 \item{covars}{string indicating the path and file name for the covariables
-file.}
+file. If you do not wish to include covariables in the QTL analysis (not
+typically recommended), do not assign anything to this argument. Defaults to
+NULL.}
 
 \item{cisP}{numeric indicating the P-value threshold for cis-QTLs to be
 written to the output file.}
 
 \item{transP}{numeric indicating the P-value threshold for trans-QTLs to be
 written to the output file.}
-
-\item{prefix}{string indicating a prefix to be added to all output file
-names.}
 }
 \value{
 Writes four output files:

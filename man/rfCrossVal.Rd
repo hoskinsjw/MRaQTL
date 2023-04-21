@@ -8,13 +8,13 @@ rfCrossVal(
   act_file,
   pheno_file,
   phenotype,
+  prefix,
   seed = 123,
   train_pct = 0.7,
   min_regs = 100,
   max_regs = 500,
   Bonf_thresh = 0.05,
-  replicates = 12,
-  prefix
+  replicates = 12
 )
 }
 \arguments{
@@ -27,6 +27,9 @@ data with the same sample in the same order as the regulator activities file.}
 
 \item{phenotype}{string indicating the column name for the phenotype of
 interest in the phenotype file.}
+
+\item{prefix}{string indicating a prefix to be added to all output file
+names.}
 
 \item{seed}{numeric indicating the RNG seed. Defaults to 123}
 
@@ -54,9 +57,6 @@ phenotype of interest. Defaults to 0.05.}
 cross-validation analyses to run. Higher numbers will tend to generate
 cleaner plots (up to a point), but will also add to the analysis time.
 Defaults to 12.}
-
-\item{prefix}{string indicating a prefix to be added to all output file
-names.}
 }
 \value{
 This will output a png image file of the random forest cross-
