@@ -43,7 +43,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' finalRF("Toy_data_rfcv_workspace.RData","Sim_pheno",100,"Toy_data")
+#' finalRF("Toy_data_rfcv_workspace.RData","Sim_pheno","Toy_data")
 #' }
 finalRF <- function(rfcv_workspace,exp_file,phenotype,prefix,mr_count=100){
 

@@ -36,21 +36,21 @@
 grabMRs <- function(exp_data,act_data,mr_list,prefix){
 
   # Read in data
-  if(is.character(exp_data)){
+  if(length(exp_data)==1){
     gene_exp=utils::read.table(exp_data,sep = "\t",header = T,row.names = 1)
   } else {gene_exp=exp_data}
 
-  if(is.character(act_data)){
+  if(length(act_data)==1){
     gene_act=utils::read.table(act_data,sep = "\t",header = T,row.names = 1)
   } else {gene_act=act_data}
 
-  if(is.character(mr_list)){
+  if(length(mr_list)==1){
     mrs=scan(mr_list,character())
   } else {mrs=mr_list}
 
   # Grab the MRs
-  mrs_exp=gene_exp[mrs[,1],]
-  mrs_act=gene_act[mrs[,1],]
+  mrs_exp=gene_exp[mrs,]
+  mrs_act=gene_act[mrs,]
 
   # Write data to file
   utils::write.table(cbind("Gene_name"=rownames(mrs_exp),mrs_exp),

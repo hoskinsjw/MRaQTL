@@ -55,6 +55,6 @@ the actual phenotypes in both the training and test sets.
 }
 \examples{
 \dontrun{
-finalRF("Toy_data_rfcv_workspace.RData","Sim_pheno",100,"Toy_data")
+finalRF("Toy_data_rfcv_workspace.RData","Sim_pheno","Toy_data")
 }
 }
