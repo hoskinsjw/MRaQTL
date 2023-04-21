@@ -1,6 +1,6 @@
 Package: MRaQTL
 Type: Package
-Title: Expression regulator activity inference with master regulator and activity QTL analysis
+Title: Expression regulator activity inference with master regulator and activity QTL analyses
 Version: 0.3.0
 Author: Jason Hoskins, ORCID:0000-0001-6944-1996
 Maintainer: Jason Hoskins <jason.hoskins@gmail.com>
