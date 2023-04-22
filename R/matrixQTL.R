@@ -12,16 +12,17 @@
 #' exression/activities file.
 #' @param gene_map string indicating the path and file name for the gene map
 #' file.
-#' @param prefix string indicating a prefix to be added to all output file
-#' names.
 #' @param covars string indicating the path and file name for the covariables
 #' file. If you do not wish to include covariables in the QTL analysis (not
 #' typically recommended), do not assign anything to this argument. Defaults to
 #' NULL.
+#' @param prefix string indicating a prefix to be added to all output file
+#' names.
 #' @param cisP numeric indicating the P-value threshold for cis-QTLs to be
-#' written to the output file.
+#' written to the output file. Defaults to 1 (all cis-QTL results are output).
 #' @param transP numeric indicating the P-value threshold for trans-QTLs to be
-#' written to the output file.
+#' written to the output file. Defaults to 0.05 (only nominally significant
+#' QTLs are output).
 #'
 #' @return Writes four output files:
 #' \enumerate{
@@ -42,9 +43,9 @@
 #' "Toy_data_regulators_activities.txt",
 #' "GEUVADIS_expressed_genes_locations_in_GRCh37.map",
 #' "GEUVADIS_filtered_samples_select_covars.txt",
-#' cisP=1,transP=0.05,"Toy_data")
+#' prefix="Toy_data")
 #' }
-matrixQTL <- function(snp_dose,snp_map,gene_data,gene_map,prefix,covars,cisP,transP){
+matrixQTL <- function(snp_dose,snp_map,gene_data,gene_map,covars=NULL,prefix,cisP=1,transP=0.05){
 
   # Send standard output to a log file.
   sink(paste(prefix,"_MatrixQTL_std_out.log",sep = ""),split = T)

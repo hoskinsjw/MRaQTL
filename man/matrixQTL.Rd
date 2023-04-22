@@ -4,7 +4,16 @@
 \alias{matrixQTL}
 \title{matrixQTL}
 \usage{
-matrixQTL(snp_dose, snp_map, gene_data, gene_map, prefix, covars, cisP, transP)
+matrixQTL(
+  snp_dose,
+  snp_map,
+  gene_data,
+  gene_map,
+  covars = NULL,
+  prefix,
+  cisP = 1,
+  transP = 0.05
+)
 }
 \arguments{
 \item{snp_dose}{string indicating the path and file name for the SNP dosage
@@ -18,19 +27,20 @@ exression/activities file.}
 \item{gene_map}{string indicating the path and file name for the gene map
 file.}
 
-\item{prefix}{string indicating a prefix to be added to all output file
-names.}
-
 \item{covars}{string indicating the path and file name for the covariables
 file. If you do not wish to include covariables in the QTL analysis (not
 typically recommended), do not assign anything to this argument. Defaults to
 NULL.}
 
+\item{prefix}{string indicating a prefix to be added to all output file
+names.}
+
 \item{cisP}{numeric indicating the P-value threshold for cis-QTLs to be
-written to the output file.}
+written to the output file. Defaults to 1 (all cis-QTL results are output).}
 
 \item{transP}{numeric indicating the P-value threshold for trans-QTLs to be
-written to the output file.}
+written to the output file. Defaults to 0.05 (only nominally significant
+QTLs are output).}
 }
 \value{
 Writes four output files:
@@ -57,6 +67,6 @@ matrixQTL(
 "Toy_data_regulators_activities.txt",
 "GEUVADIS_expressed_genes_locations_in_GRCh37.map",
 "GEUVADIS_filtered_samples_select_covars.txt",
-cisP=1,transP=0.05,"Toy_data")
+prefix="Toy_data")
 }
 }

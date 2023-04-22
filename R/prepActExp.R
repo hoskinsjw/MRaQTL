@@ -56,7 +56,7 @@ prepActExp <- function(gene_exp,covariables,network,prefix){
   genes_set=Biobase::ExpressionSet(assayData=as.matrix(genes))
   covars=as.data.frame(t(utils::read.table(covariables,sep="\t",header = T,row.names = 1)))
 
-  # Scale (i.e. Z-transform) genes in the full log2(TPM) dataset.
+  # Scale (i.e. Z-transform) genes in the full expression dataset.
   print("Z-scaling expression data")
   z_set=zscale.genes(genes,exprSet = T)
 
