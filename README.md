@@ -1,8 +1,8 @@
 # MRaQTL
-Expression regulator activity inference with master regulator and activity QTL analyses
+## Expression regulator activity inference with master regulator (MR) and activity QTL analyses
 
 This package includes all functions required to apply the master regulator (MR) analysis and activity QTL 
-analyses as first demonstrated in Hoskins et al., 2021 (https://doi.org/10.1371/journal.pcbi.1009563) and 
+analyses as first demonstrated in [Hoskins et al., 2021](https://doi.org/10.1371/journal.pcbi.1009563) and 
 then developed into a user-friendly pipeline for STAR Protocols (currently under review, will link to article
 when available).
 
