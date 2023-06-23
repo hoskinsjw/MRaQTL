@@ -4,7 +4,7 @@
 
 This package includes all functions required to apply the master regulator (MR) analysis and activity QTL 
 analyses as first demonstrated in [Hoskins et al., 2021](https://doi.org/10.1371/journal.pcbi.1009563) and 
-then developed into a user-friendly pipeline for STAR Protocols ([Hoskins et al., 2021](https://doi.org/10.1016/j.xpro.2023.102362)).
+then developed into a user-friendly pipeline for STAR Protocols ([Hoskins et al., 2023](https://doi.org/10.1016/j.xpro.2023.102362)).
 
 The overall pipeline is divided into 4 general steps, 3 of which are in this package.
 1. Tissue-specific gene co-expression network inference with ARACNe (not implemented in R).
